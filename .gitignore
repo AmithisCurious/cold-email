@@ -1,0 +1,11 @@
+accounts.yml
+sent.log
+targets.json
+*.env
+.env
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/

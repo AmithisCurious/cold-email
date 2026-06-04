@@ -1,0 +1,31 @@
+# Copy this to accounts.yml and fill in your credentials
+# accounts.yml is gitignored — never commit it
+
+# Your sender profile — used in emails and the email prompt
+sender:
+  name: "Your Name"
+  email: "you@gmail.com"
+  linkedin: "linkedin.com/in/your-profile"
+  github: "github.com/YourHandle"
+  role: "ML Engineer"
+  blurb: "2-3 sentences about your background and what you've built. Be specific — metrics help."
+
+apollo:
+  - email: "your@gmail.com"
+    api_key: "your_apollo_api_key"
+    monthly_limit: 50
+    used: 0
+    reset_date: ""       # set automatically on first use (YYYY-MM-DD)
+
+  # Add more accounts as you create them:
+  # - email: "account2@gmail.com"
+  #   api_key: "..."
+  #   monthly_limit: 50
+  #   used: 0
+  #   reset_date: ""
+
+gmail:
+  # Run `python auth.py` to generate these
+  client_id: ""
+  client_secret: ""
+  refresh_token: ""

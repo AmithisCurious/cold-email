@@ -1,0 +1,66 @@
+# Cold Email Service — Config
+# Edit this file to customize targeting and rate limits
+
+# sender info lives in accounts.yml (gitignored) under the `sender:` key
+
+targeting:
+  # Who to email — decision makers and hiring managers for AI/ML roles
+  titles:
+    - "Head of AI"
+    - "Head of Machine Learning"
+    - "Head of Engineering"
+    - "Engineering Manager"
+    - "AI Lead"
+    - "ML Lead"
+    - "AI Platform Lead"
+    - "Technical Lead"
+    - "Tech Lead"
+    - "Founder"
+    - "Co-Founder"
+    - "CTO"
+    - "Technical Recruiter"
+    - "Engineering Recruiter"
+    - "Talent Partner"
+
+  # Skip these — too senior or irrelevant
+  skip_titles:
+    - "CEO"
+    - "VP Engineering"
+    - "VP of Engineering"
+    - "Chief Product"
+    - "Chief Revenue"
+    - "President"
+    - "General Manager"
+    - "Sales Director"
+    - "Marketing Director"
+
+  # Skip companies over this size (founders stop reading cold emails)
+  max_company_size: 200
+
+  locations:
+    - "India"
+    - "Bangalore"
+    - "Remote"
+
+rate_limits:
+  emails_per_day: 25
+  emails_per_hour: 5
+  min_delay_seconds: 120   # randomized gap between sends
+  max_delay_seconds: 300
+
+scraping:
+  request_delay_seconds: 3  # be polite
+
+llm:
+  # Local LLM config — set this up on your PC
+  # Supports Ollama (recommended), LM Studio, or any OpenAI-compatible endpoint
+  provider: "ollama"          # ollama | lmstudio | openai-compat
+  base_url: "http://localhost:11434"
+  model: "llama3.1:8b"        # or mistral, qwen2.5, etc.
+  temperature: 0.7
+  max_tokens: 200
+
+paths:
+  sent_log: "sent.log"
+  targets_db: "targets.json"
+  accounts: "accounts.yml"
